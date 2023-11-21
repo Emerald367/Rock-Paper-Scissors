@@ -24,17 +24,17 @@ function playRound(playerSelection, computerSelection) {
     const DRAW = "Tie!"
     
 
-    if (playerSelection === "Rock" && computerSelection === "Paper") {
+    if (playerSelection.toLowerCase() === "Rock".toLowerCase() && computerSelection === "Paper") {
         return LOSING_STATEMENT;
-    } else if (playerSelection === "Paper" && computerSelection === "Scissors") {
+    } else if (playerSelection.toLowerCase() === "Paper".toLowerCase() && computerSelection === "Scissors") {
         return LOSING_STATEMENT;
-    } else if (playerSelection === "Scissors" && computerSelection === "Rock") {
+    } else if (playerSelection.toLowerCase() === "Scissors".toLowerCase() && computerSelection === "Rock") {
         return LOSING_STATEMENT;
-    } else if (playerSelection === "Rock" && computerSelection === "Scissors") {
+    } else if (playerSelection.toLowerCase() === "Rock".toLowerCase() && computerSelection === "Scissors") {
         return WINNING_STATEMENT;
-    } else if (playerSelection === "Paper" && computerSelection === "Rock") {
+    } else if (playerSelection.toLowerCase() === "Paper".toLowerCase() && computerSelection === "Rock") {
         return WINNING_STATEMENT;
-    } else if (playerSelection === "Scissors" && computerSelection === "Paper") {
+    } else if (playerSelection.toLowerCase() === "Scissors".toLowerCase() && computerSelection === "Paper") {
         return WINNING_STATEMENT;
     } else {
         return DRAW;
@@ -42,6 +42,9 @@ function playRound(playerSelection, computerSelection) {
           
 }
 
- const playerSelection = "Rock";
-let computerSelection = computerChoice();
-console.log(playRound(playerSelection, computerSelection));
+
+
+ function game() {
+     const USER_INPUT = prompt("Rock, Paper, Scissors, Shoot!");
+
+}
