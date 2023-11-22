@@ -24,20 +24,20 @@ function playRound(playerSelection, computerSelection) {
     const DRAW = "Tie!"
     
 
-    if (playerSelection.toLowerCase() === "Rock".toLowerCase() && computerSelection === "Paper") {
-        return LOSING_STATEMENT;
-    } else if (playerSelection.toLowerCase() === "Paper".toLowerCase() && computerSelection === "Scissors") {
-        return LOSING_STATEMENT;
-    } else if (playerSelection.toLowerCase() === "Scissors".toLowerCase() && computerSelection === "Rock") {
-        return LOSING_STATEMENT;
-    } else if (playerSelection.toLowerCase() === "Rock".toLowerCase() && computerSelection === "Scissors") {
-        return WINNING_STATEMENT;
-    } else if (playerSelection.toLowerCase() === "Paper".toLowerCase() && computerSelection === "Rock") {
-        return WINNING_STATEMENT;
-    } else if (playerSelection.toLowerCase() === "Scissors".toLowerCase() && computerSelection === "Paper") {
-        return WINNING_STATEMENT;
+    if (playerSelection === "Rock" && computerSelection === "Paper") {
+        return "Lose!";
+    } else if (playerSelection === "Paper" && computerSelection === "Scissors") {
+        return "Lose!";
+    } else if (playerSelection === "Scissors" && computerSelection === "Rock") {
+        return "Lose!";
+    } else if (playerSelection === "Rock" && computerSelection === "Scissors") {
+        return "Win!";
+    } else if (playerSelection === "Paper" && computerSelection === "Rock") {
+        return "Win!";
+    } else if (playerSelection === "Scissors" && computerSelection === "Paper") {
+        return "Win!";
     } else {
-        return DRAW;
+        return "Tie!";
     }
           
 }
@@ -45,6 +45,28 @@ function playRound(playerSelection, computerSelection) {
 
 
  function game() {
-     const USER_INPUT = prompt("Rock, Paper, Scissors, Shoot!");
+     let playerScore = 0; 
+     let computerScore = 0; 
+     for (let i = 0; i < 5; i++) {
+       const USER_INPUT = prompt("Rock, Paper, or Scissors?");
+         switch (playRound()) {
+           case "Lose!":
+             playerScore++;
+             console.log("You're Winning");
+             break;
+         
+           case "Win!":
+             computerScore++;
+             console.log("You're losing");
+             break;
+   
+          case computerScore > playerScore:
+             console.log("Computer has won!");
 
+          case playerScore > computerScore:
+             console.log("Player has won!");   
+     }  
+     }
 }
+
+console.log(game())
