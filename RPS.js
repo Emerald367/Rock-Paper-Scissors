@@ -60,17 +60,19 @@ function playRound(playerSelection, computerSelection) {
              playerScore++;
              console.log("You've won this Round!")
              break;
+             }
+         }
    
-          case computerScore > playerScore:
-             console.log("Computer has won!");
+        if (computerScore > playerScore) {
+            return "Computer has won!";
+             
 
-          case playerScore > computerScore:
-             console.log("Player has won!");  
-         
-          case playerScore === computerScore:
-             console.log("Tied Game!");
-     }  
-     }
+        } else if (playerScore > computerScore){
+            return "Player has won!";
+                
+        } else {
+            return "Tied Game!";
+        }
+     
 }
-
 console.log(game());
